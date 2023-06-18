@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Source>
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+
+@inject IOptions<RequestLocalizationOptions> LockOptions
+
+@{
+    var requestCul = Context.Features.Get<IRequestCultureFeature>();
+}
+<h1></h1>
+<h2> @requestCul.RequestCulture.Culture.Name </h2>
+@if (!Model.Any())
+{
+
+    <div class="alert alert-warning" role="alert">
+        لا يوجد بيانات
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr class="" style="color:red;">
+                <th  scope="col">الكود</th>
+                <th  scope="col">النوع</th>
+                <th  scope="col">الإسم العربي</th>
+                <th  scope="col">الإسم الإنجليزي</th>
+                <th  scope="col">العنوان</th>
+                <th  scope="col">رقم الهاتف</th>
+                <th scope="col"> <i class="fa fa-cog"></i> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Code</th>
+                    <td>@item.SourceType.AName</td>
+                    <td>@item.AName</td>
+                    <td>@item.EName</td>
+                    <td>@item.Address</td>
+                    <td>@item.Tel</td>
+                    <td>
+
+                        <a class="btn btn-outline-warning" asp-area="" asp-controller="Source" asp-action="Details" asp-route-id="@item.Id" style="color:black;">  <i class="fa fa-eye"></i> </a>
+                        <a class="btn btn-outline-primary" asp-area="" asp-controller="Source" asp-action="Form" asp-route-id="@item.Id">  <i class="fa fa-edit"></i> </a>
+                        <a class="btn btn-outline-danger" asp-area="" asp-controller="Source" asp-action="Delete" asp-route-id="@item.Id">  <i class="fa fa-trash"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

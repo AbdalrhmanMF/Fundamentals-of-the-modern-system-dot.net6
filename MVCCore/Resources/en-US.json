@@ -1,0 +1,16 @@
+{
+  "welcome": "Welcome, How are you?",
+  "welcomeParam": "Welcome {0}, How are you?",
+  "home": "Home Page",
+  "testLanguage": "Test Language",
+  "create": "create",
+  "culture": "culture",
+  "date": "date",
+  "currency": "currency",
+  "number": "number",
+  "numbers": "numbers",
+  "name": "name",
+  "requiredName": "required Name",
+  "required": "required Filed",
+  "save": "save"
+}

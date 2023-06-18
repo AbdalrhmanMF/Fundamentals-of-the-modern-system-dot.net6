@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Localization
+@{
+    ViewData["Title"] = localizer["testLanguage"];
+}
+
+@{
+    var reqCul = Context.Features.Get<IRequestCultureFeature>();
+}
+
+<a class="btn btn-primary" asp-action="TestLanguageViewModel">@localizer["create"]</a>
+
+
+<table class="table table-hover mt-4">
+    <tr>
+        <td>@localizer["culture"]</td>
+        <td>@reqCul.RequestCulture.Culture.NativeName</td>
+    </tr>
+    <tr>
+        <td>@localizer["date"]</td>
+        <td>@DateTime.Now</td>
+    </tr>
+    <tr>
+        <td>@localizer["currency"]</td>
+        <td>@(9995.25.ToString("c"))</td>
+    </tr>
+    <tr>
+        <td>@localizer["numbers"]</td>
+        <td>@(18986.69m.ToString("F2"))</td>
+    </tr>
+</table>

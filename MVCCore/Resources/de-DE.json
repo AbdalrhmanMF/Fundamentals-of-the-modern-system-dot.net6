@@ -1,0 +1,16 @@
+{
+  "welcome": "Willkommen, wie geht es dir?",
+  "welcomeParam": "Willkommen {0}, wie geht es dir?",
+  "home": "Startseite",
+  "testLanguage": "Test sprache",
+  "create": "erstellen",
+  "culture": "Kultur",
+  "date": "Datum",
+  "currency": "Währung",
+  "number": "Nummer",
+  "numbers": "Zahlen",
+  "name": "name",
+  "requiredName": "erforderlicher Name",
+  "required": "erforderlicher",
+  "save": "speichern"
+}
